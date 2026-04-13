@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>三国人格鉴定</title>
+
+  <!-- 微信分享卡片 -->
+  <meta property="og:title" content="三国人格鉴定 - 测测你的三国精神状态">
+  <meta property="og:description" content="三国乱世，人人有病。15道题，3分钟，暴露你的本性。">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/1e1e1e/6B8E23?text=三国人格鉴定">
+  <meta property="og:type" content="website">
+
+  <!-- 字体：霞鹜文楷（国内加载快） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== 首页 ====== -->
+  <div id="page-home" class="page active">
+    <div class="home-container">
+      <div class="home-title-group">
+        <h1 class="home-title">三国人格鉴定</h1>
+        <p class="home-subtitle">三国乱世，人人有病。你是什么病？</p>
+        <div class="home-divider"></div>
+      </div>
+
+      <div class="home-characters">
+        <div class="char-float" style="animation-delay:0s">⚔️</div>
+        <div class="char-float" style="animation-delay:0.3s">🏮</div>
+        <div class="char-float" style="animation-delay:0.6s">📜</div>
+        <div class="char-float" style="animation-delay:0.9s">🗡️</div>
+        <div class="char-float" style="animation-delay:1.2s">🎭</div>
+      </div>
+
+      <div class="home-preview">
+        <div class="preview-tags">
+          <span class="preview-tag">曹操型·职场枭雄</span>
+          <span class="preview-tag">刘禅型·终极躺王</span>
+          <span class="preview-tag">司马懿型·熬鹰大师</span>
+          <span class="preview-tag">吕布型·跳槽之王</span>
+          <span class="preview-tag">周瑜型·卷到吐血</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="startTest()" id="start-btn">
+        立即鉴定
+      </button>
+      <button class="btn-secondary" onclick="continueTest()" id="continue-btn" style="display: none; margin-top: 12px;">
+        继续上次的测试
+      </button>
+      <p class="home-hint">25道题 · 5分钟 · 暴露你的本性</p>
+
+      <div class="home-footer">
+        <span class="test-count">已有 <strong id="test-count-num">12,847</strong> 人完成鉴定</span>
+        <span class="disclaimer">纯属娱乐，切勿当真</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 测试页 ====== -->
+  <div id="page-quiz" class="page">
+    <div class="quiz-container">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="quiz-progress-text">
+        <span id="progress-text">第 1/15 题</span>
+        <span class="progress-hint" id="progress-hint">快了快了，你的本性快藏不住了</span>
+      </div>
+
+      <div class="quiz-question-area">
+        <div class="question-number" id="question-number">壹</div>
+        <h2 class="question-text" id="question-text"></h2>
+      </div>
+
+      <div class="quiz-options" id="options-container">
+        <!-- 选项由JS动态生成 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 加载过渡页 ====== -->
+  <div id="page-loading" class="page">
+    <div class="loading-container">
+      <div class="loading-compass">
+        <div class="compass-ring"></div>
+        <div class="compass-inner">卦</div>
+      </div>
+      <p class="loading-text" id="loading-text">正在分析你的精神状态...</p>
+    </div>
+  </div>
+
+  <!-- ====== 结果页 ====== -->
+  <div id="page-result" class="page">
+    <div class="result-container">
+
+      <!-- 人格卡片 -->
+      <div class="result-card" id="result-card">
+        <div class="result-card-top">
+          <div class="result-type-name" id="result-name"></div>
+          <div class="result-english" id="result-english"></div>
+          <div class="result-camp" id="result-camp"></div>
+        </div>
+        <div class="result-quote" id="result-quote"></div>
+        <div class="result-image-area">
+          <img id="result-image" src="" alt="人格形象" />
+        </div>
+      </div>
+
+      <!-- 人格描述 -->
+      <div class="result-section">
+        <h3 class="section-title">
+          <span class="section-icon">📖</span> 你是这样的人
+        </h3>
+        <p class="section-content" id="result-desc"></p>
+      </div>
+
+      <!-- 致命弱点 -->
+      <div class="result-section weakness-section">
+        <h3 class="section-title">
+          <span class="section-icon">⚠️</span> 你的致命弱点
+        </h3>
+        <p class="section-content" id="result-weakness"></p>
+      </div>
+
+      <!-- 最终结局 -->
+      <div class="result-section ending-section">
+        <h3 class="section-title">
+          <span class="section-icon">📜</span> 你的最终结局
+        </h3>
+        <p class="section-content" id="result-ending"></p>
+      </div>
+
+      <!-- 武器 & BGM -->
+      <div class="result-row">
+        <div class="result-mini-card">
+          <div class="mini-card-label">你的武器</div>
+          <div class="mini-card-value" id="result-weapon"></div>
+        </div>
+        <div class="result-mini-card">
+          <div class="mini-card-label">你的BGM</div>
+          <div class="mini-card-value" id="result-bgm"></div>
+        </div>
+      </div>
+
+      <!-- 分享金句卡片 -->
+      <div class="share-card" id="share-card">
+        <div class="share-card-quote" id="result-share-quote"></div>
+        <div class="share-card-brand">三国人格鉴定</div>
+        <div class="share-card-hint">扫码测测你是什么人格</div>
+      </div>
+
+      <!-- 按钮区 -->
+      <div class="result-actions">
+        <button class="btn-primary" onclick="shareResult()">
+          📤 分享给朋友
+        </button>
+        <button class="btn-secondary" onclick="restartTest()">
+          🔄 再测一次
+        </button>
+      </div>
+
+      <!-- 其他人格 -->
+      <div class="other-types">
+        <h3 class="section-title">看看你的朋友是什么人格</h3>
+        <div class="other-types-scroll" id="other-types-scroll">
+          <!-- 由JS动态生成 -->
+        </div>
+      </div>
+
+      <div class="result-footer">
+        <span>纯属娱乐，切勿当真</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
