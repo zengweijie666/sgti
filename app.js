@@ -3,7 +3,7 @@
    ===================================================== */
 
 // ========================
-// 题目数据（15题）
+// 题目数据（20 题，每题 6 选项）
 // ========================
 const questions = [
   {
@@ -13,7 +13,9 @@ const questions = [
       { text: '第一个发言，条理清晰，方案直接摆出来', type: 'caocao' },
       { text: '先看看风向，等大部分人表态后再附和', type: 'liubei' },
       { text: '低头假装记笔记，心里想的是晚饭吃什么', type: 'liushan' },
-      { text: '心里有想法但不说，会后单独找领导聊', type: 'simayi' }
+      { text: '心里有想法但不说，会后单独找领导聊', type: 'simayi' },
+      { text: '快速记录要点，等别人说完再补充', type: 'zhugeliang' },
+      { text: '担心说错话，全程保持沉默', type: 'diaochan' }
     ]
   },
   {
@@ -23,7 +25,9 @@ const questions = [
       { text: '当面撕破脸，证据甩桌上，谁也别想跑', type: 'guanyu' },
       { text: '算了，多一事不如少一事', type: 'liushan' },
       { text: '表面不动声色，暗中收集证据，关键时刻一击致命', type: 'simayi' },
-      { text: '找其他同事吐槽，争取舆论支持后再行动', type: 'liubei' }
+      { text: '找其他同事吐槽，争取舆论支持后再行动', type: 'liubei' },
+      { text: '直接找上级说明情况，要求公正处理', type: 'caocao' },
+      { text: '委屈但不敢说，只能自己消化情绪', type: 'zhouyu' }
     ]
   },
   {
@@ -33,7 +37,9 @@ const questions = [
       { text: '躺在床上刷手机到天黑，外卖都懒得点', type: 'liushan' },
       { text: '约朋友吃饭喝酒，社交就是充电', type: 'liubei' },
       { text: '虽然人在休息，但脑子里还在复盘工作', type: 'zhugeliang' },
-      { text: '制定了精确到小时的计划，但一条都没执行', type: 'yuanshao' }
+      { text: '制定了精确到小时的计划，但一条都没执行', type: 'yuanshao' },
+      { text: '趁机学习新技能，自我提升不能停', type: 'caocao' },
+      { text: '想出门又懒得动，在纠结中度过一天', type: 'diaochan' }
     ]
   },
   {
@@ -43,7 +49,9 @@ const questions = [
       { text: '先甩锅，保住自己再说', type: 'simayi' },
       { text: '主动认错，但私下想办法补救', type: 'liubei' },
       { text: '复盘分析，下次一定做得更好', type: 'zhugeliang' },
-      { text: '搞砸就搞砸呗，天又塌不下来', type: 'liushan' }
+      { text: '搞砸就搞砸呗，天又塌不下来', type: 'liushan' },
+      { text: '愤怒地质问团队，为什么没做好', type: 'caocao' },
+      { text: '陷入自责，怀疑自己的能力', type: 'zhouyu' }
     ]
   },
   {
@@ -53,7 +61,9 @@ const questions = [
       { text: '直接找老板谈，数据和成果摆上去', type: 'caocao' },
       { text: '先请老板吃顿饭，铺垫铺垫再说', type: 'liubei' },
       { text: '算了，大不了跳槽', type: 'lvbu' },
-      { text: '准备了三个月的PPT，但到了门口又退缩了', type: 'yuanshao' }
+      { text: '准备了三个月的 PPT，但到了门口又退缩了', type: 'yuanshao' },
+      { text: '默默等待老板主动发现我的价值', type: 'zhugeliang' },
+      { text: '想提又不敢提，怕被拒绝后尴尬', type: 'diaochan' }
     ]
   },
   {
@@ -63,7 +73,9 @@ const questions = [
       { text: '二话不说直接转，朋友比钱重要', type: 'liubei' },
       { text: '先评估对方还款能力，再决定借不借', type: 'caocao' },
       { text: '假装没看到消息，过两天说"最近也紧"', type: 'simayi' },
-      { text: '想借又怕不还，在"借"和"不借"之间内耗三天', type: 'diaochan' }
+      { text: '想借又怕不还，在"借"和"不借"之间内耗三天', type: 'diaochan' },
+      { text: '借可以，但要写借条按规矩来', type: 'guanyu' },
+      { text: '自己都没多少钱，怎么借', type: 'liushan' }
     ]
   },
   {
@@ -73,7 +85,9 @@ const questions = [
       { text: '拍板做决定的那个人', type: 'caocao' },
       { text: '把大家团结在一起的粘合剂', type: 'liubei' },
       { text: '默默干活但不太说话的那个人', type: 'guanyu' },
-      { text: '躺在工位上等下班的那个人', type: 'liushan' }
+      { text: '躺在工位上等下班的那个人', type: 'liushan' },
+      { text: '制定计划分配任务的那个人', type: 'zhugeliang' },
+      { text: '经常提出创新想法的那个人', type: 'lvbu' }
     ]
   },
   {
@@ -83,7 +97,9 @@ const questions = [
       { text: '站出来正面硬刚，哪怕得罪人', type: 'guanyu' },
       { text: '拉拢一帮人一起抗争，人多力量大', type: 'liubei' },
       { text: '暗中记下这笔账，等时机到了再清算', type: 'simayi' },
-      { text: '算了算了，世界本来就不公平', type: 'liushan' }
+      { text: '算了算了，世界本来就不公平', type: 'liushan' },
+      { text: '收集证据，通过正规渠道投诉', type: 'caocao' },
+      { text: '气得睡不着，但又无能为力', type: 'zhouyu' }
     ]
   },
   {
@@ -93,17 +109,21 @@ const questions = [
       { text: '深信不疑，我命由我不由天', type: 'zhugeliang' },
       { text: '三分天注定，七分靠打拼，剩下九十分靠关系', type: 'liubei' },
       { text: '努力不一定会成功，但不努力一定会很舒服', type: 'liushan' },
-      { text: '努力是基本功，关键得等风来', type: 'simayi' }
+      { text: '努力是基本功，关键得等风来', type: 'simayi' },
+      { text: '成功需要努力，更需要正确的方向', type: 'caocao' },
+      { text: '为什么努力了还是不如别人，很焦虑', type: 'zhouyu' }
     ]
   },
   {
     id: 10,
-    text: '你的人生信条更接近——',
+    text: '做决策时，你更倾向于——',
     options: [
-      { text: '"宁教我负天下人，休教天下人负我"', type: 'caocao' },
-      { text: '"勿以善小而不为"', type: 'liubei' },
-      { text: '"此间乐，不思蜀"', type: 'liushan' },
-      { text: '"我挥剑只有一次，但我磨剑磨了十年"', type: 'simayi' }
+      { text: '相信直觉，快速做出决定', type: 'caocao' },
+      { text: '听取多方意见，综合考虑', type: 'liubei' },
+      { text: '能拖就拖，不到最后不做决定', type: 'liushan' },
+      { text: '收集所有信息，分析利弊再决定', type: 'zhugeliang' },
+      { text: '参考过往经验，选择稳妥方案', type: 'simayi' },
+      { text: '做了决定又反复修改，难以定夺', type: 'yuanshao' }
     ]
   },
   {
@@ -113,7 +133,9 @@ const questions = [
       { text: '啥都不会但特别会拍马屁的', type: 'guanyu' },
       { text: '能力一般但天天加班表演努力的', type: 'liushan' },
       { text: '表面兄弟背后捅刀的', type: 'liubei' },
-      { text: '说了半天也没说清楚到底要干嘛的', type: 'caocao' }
+      { text: '说了半天也没说清楚到底要干嘛的', type: 'caocao' },
+      { text: '总是质疑你的方案，指手画脚的', type: 'zhugeliang' },
+      { text: '抢功劳第一名，甩锅也第一名的', type: 'lvbu' }
     ]
   },
   {
@@ -122,8 +144,10 @@ const questions = [
     options: [
       { text: '干了，富贵险中求', type: 'caocao' },
       { text: '先找几个靠谱的人一起分担风险', type: 'liubei' },
-      { text: '分析利弊，制定plan A/B/C，准备万全再动手', type: 'zhugeliang' },
-      { text: '风险太高，还是稳稳当当的好', type: 'liushan' }
+      { text: '分析利弊，制定 plan A/B/C，准备万全再动手', type: 'zhugeliang' },
+      { text: '风险太高，还是稳稳当当的好', type: 'liushan' },
+      { text: '先观望一下，看看别人怎么做', type: 'simayi' },
+      { text: '很心动但不敢行动，怕失败', type: 'yuanshao' }
     ]
   },
   {
@@ -133,7 +157,9 @@ const questions = [
       { text: '社交达人，三句话就能跟人称兄道弟', type: 'liubei' },
       { text: '有选择地社交，只跟能聊到一起的人深交', type: 'guanyu' },
       { text: '能不社交就不社交，微信消息已读不回是常态', type: 'liushan' },
-      { text: '不主动社交，但别人找我我也能应付', type: 'diaochan' }
+      { text: '不主动社交，但别人找我我也能应付', type: 'diaochan' },
+      { text: '带着目的社交，认识有用的人', type: 'caocao' },
+      { text: '在人群中感到不自在，但又怕被孤立', type: 'zhouyu' }
     ]
   },
   {
@@ -143,17 +169,21 @@ const questions = [
       { text: '太冲动，经常事后后悔', type: 'lvbu' },
       { text: '太在意别人的看法', type: 'diaochan' },
       { text: '想太多，做得太少', type: 'yuanshao' },
-      { text: '根本不想努力，但又焦虑不努力的后果', type: 'zhouyu' }
+      { text: '根本不想努力，但又焦虑不努力的后果', type: 'zhouyu' },
+      { text: '太强势，容易给人压力', type: 'caocao' },
+      { text: '太容易相信别人，容易上当', type: 'liubei' }
     ]
   },
   {
     id: 15,
-    text: '如果穿越到三国，你最想成为——',
+    text: '面对压力，你的应对方式是——',
     options: [
-      { text: '曹操，宁可我负人', type: 'caocao' },
-      { text: '刘备，仁义走天下', type: 'liubei' },
-      { text: '司马懿，熬死所有人', type: 'simayi' },
-      { text: '刘禅，乐不思蜀', type: 'liushan' }
+      { text: '迎难而上，把压力转化为动力', type: 'caocao' },
+      { text: '找朋友倾诉，寻求情感支持', type: 'liubei' },
+      { text: '逃避现实，先放松再说', type: 'liushan' },
+      { text: '制定详细计划，一步步解决', type: 'zhugeliang' },
+      { text: '默默承受，相信时间会解决一切', type: 'simayi' },
+      { text: '压力大到失眠，但又无法解决', type: 'zhouyu' }
     ]
   },
   {
@@ -163,7 +193,9 @@ const questions = [
       { text: '认真倾听，给出实际的建议和解决方案', type: 'zhugeliang' },
       { text: '先安慰情绪，再慢慢引导对方看到积极面', type: 'liubei' },
       { text: '默默陪着，但心里想着自己的事情', type: 'liushan' },
-      { text: '表面安慰，实际上在想怎么利用这个信息', type: 'simayi' }
+      { text: '表面安慰，实际上在想怎么利用这个信息', type: 'simayi' },
+      { text: '比朋友还激动，恨不得替他解决问题', type: 'guanyu' },
+      { text: '担心说错话让朋友更难过', type: 'diaochan' }
     ]
   },
   {
@@ -173,7 +205,9 @@ const questions = [
       { text: '果断决定，相信自己的直觉和判断', type: 'caocao' },
       { text: '征求家人朋友意见，综合考虑后再决定', type: 'liubei' },
       { text: '能不变就不变，稳定最重要', type: 'liushan' },
-      { text: '反复分析利弊，制定详细计划后再行动', type: 'zhugeliang' }
+      { text: '反复分析利弊，制定详细计划后再行动', type: 'zhugeliang' },
+      { text: '先试探性地尝试一下，看看效果', type: 'simayi' },
+      { text: '想改变又害怕改变，纠结很久', type: 'yuanshao' }
     ]
   },
   {
@@ -183,7 +217,9 @@ const questions = [
       { text: '成功就是掌握权力和资源，能够影响他人', type: 'caocao' },
       { text: '成功是拥有真诚的人际关系和内心的满足', type: 'liubei' },
       { text: '成功就是过得舒服自在，不用为生活奔波', type: 'liushan' },
-      { text: '成功需要长期积累，急不得也慢不得', type: 'simayi' }
+      { text: '成功需要长期积累，急不得也慢不得', type: 'simayi' },
+      { text: '成功就是实现自己的目标和价值', type: 'zhugeliang' },
+      { text: '成功是成为某个领域的顶尖人才', type: 'lvbu' }
     ]
   },
   {
@@ -193,67 +229,21 @@ const questions = [
       { text: '立即行动，边做边调整', type: 'caocao' },
       { text: '先稳定团队情绪，再分工合作解决问题', type: 'liubei' },
       { text: '慌了，不知道该怎么办', type: 'liushan' },
-      { text: '冷静分析，找出最优解决方案', type: 'zhugeliang' }
+      { text: '冷静分析，找出最优解决方案', type: 'zhugeliang' },
+      { text: '先控制局面，再慢慢想办法', type: 'simayi' },
+      { text: '求助他人，希望有人能站出来', type: 'diaochan' }
     ]
   },
   {
     id: 20,
-    text: '你的理想周末是——',
+    text: '回顾过去，你最自豪的是——',
     options: [
-      { text: '参加商务社交活动，拓展人脉', type: 'caocao' },
-      { text: '和朋友聚会，享受热闹的氛围', type: 'liubei' },
-      { text: '宅在家里，完全放松不做任何计划', type: 'liushan' },
-      { text: '学习新技能或完成个人项目', type: 'zhugeliang' }
-    ]
-  },
-  {
-    id: 21,
-    text: '当别人对你有误解时，你会——',
-    options: [
-      { text: '直接澄清，不容忍任何误解', type: 'guanyu' },
-      { text: '通过行动证明自己，让时间说话', type: 'liubei' },
-      { text: '算了，解释太累，随他们怎么想', type: 'liushan' },
-      { text: '观察对方动机，选择合适时机澄清', type: 'simayi' }
-    ]
-  },
-  {
-    id: 22,
-    text: '你最看重的人生品质是——',
-    options: [
-      { text: '能力和效率', type: 'caocao' },
-      { text: '诚信和善良', type: 'liubei' },
-      { text: '自由和舒适', type: 'liushan' },
-      { text: '智慧和远见', type: 'zhugeliang' }
-    ]
-  },
-  {
-    id: 23,
-    text: '面对竞争，你的态度是——',
-    options: [
-      { text: '正面迎战，赢就要赢得漂亮', type: 'guanyu' },
-      { text: '合作共赢，寻找双赢的机会', type: 'liubei' },
-      { text: '避开竞争，选择轻松的赛道', type: 'liushan' },
-      { text: '暗中准备，等待最佳出手时机', type: 'simayi' }
-    ]
-  },
-  {
-    id: 24,
-    text: '你觉得自己最大的优势是——',
-    options: [
-      { text: '决断力强，敢作敢为', type: 'caocao' },
-      { text: '人缘好，善于团结他人', type: 'liubei' },
-      { text: '心态好，不容易焦虑', type: 'liushan' },
-      { text: '思考深，能看透问题本质', type: 'zhugeliang' }
-    ]
-  },
-  {
-    id: 25,
-    text: '最后一个问题：你希望别人如何记住你？',
-    options: [
-      { text: '一个改变了世界的人', type: 'caocao' },
-      { text: '一个温暖可靠的朋友', type: 'liubei' },
-      { text: '一个活得自在快乐的人', type: 'liushan' },
-      { text: '一个充满智慧的导师', type: 'zhugeliang' }
+      { text: '取得了一些让人瞩目的成就', type: 'caocao' },
+      { text: '结交了一群真心相待的朋友', type: 'liubei' },
+      { text: '一直保持轻松自在的生活状态', type: 'liushan' },
+      { text: '通过智慧解决了很多难题', type: 'zhugeliang' },
+      { text: '隐忍多年终于等到机会', type: 'simayi' },
+      { text: '敢于尝试很多新鲜事物', type: 'lvbu' }
     ]
   }
 ];
@@ -417,7 +407,7 @@ const results = {
 // ========================
 // 中文数字映射
 // ========================
-const chineseNumbers = ['壹','贰','叁','肆','伍','陆','柒','捌','玖','拾','拾壹','拾贰','拾叁','拾肆','拾伍','拾陆','拾柒','拾捌','拾玖','贰拾','贰拾壹','贰拾贰','贰拾叁','贰拾肆','贰拾伍'];
+const chineseNumbers = ['壹','贰','叁','肆','伍','陆','柒','捌','玖','拾','拾壹','拾贰','拾叁','拾肆','拾伍','拾陆','拾柒','拾捌','拾玖','贰拾'];
 
 // ========================
 // 状态
@@ -532,7 +522,7 @@ function renderQuestion() {
   const container = document.getElementById('options-container');
   container.innerHTML = '';
 
-  const letters = ['A', 'B', 'C', 'D'];
+  const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
   q.options.forEach((opt, index) => {
     const card = document.createElement('div');
     card.className = 'option-card';
@@ -584,8 +574,8 @@ function selectOption(index) {
 
     if (state.currentQuestion < questions.length) {
       saveStateToStorage(); // 保存当前状态
-      // 中点彩蛋（第8题后）
-      if (state.currentQuestion === 8) {
+      // 中点彩蛋（第 10 题后）
+      if (state.currentQuestion === 10) {
         showMidpoint();
       } else {
         renderQuestion();
