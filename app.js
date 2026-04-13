@@ -25,7 +25,7 @@ const questions = [
       { text: '当面撕破脸，证据甩桌上，谁也别想跑', type: 'guanyu' },
       { text: '算了，多一事不如少一事', type: 'liushan' },
       { text: '表面不动声色，暗中收集证据，关键时刻一击致命', type: 'simayi' },
-      { text: '找其他同事吐槽，争取舆论支持后再行动', type: 'liubei' },
+      { text: '找其他同事吐槽，争取舆论支持后再行动', type: 'lvbu' },
       { text: '直接找上级说明情况，要求公正处理', type: 'caocao' },
       { text: '委屈但不敢说，只能自己消化情绪', type: 'zhouyu' }
     ]
@@ -38,8 +38,8 @@ const questions = [
       { text: '约朋友吃饭喝酒，社交就是充电', type: 'liubei' },
       { text: '虽然人在休息，但脑子里还在复盘工作', type: 'zhugeliang' },
       { text: '制定了精确到小时的计划，但一条都没执行', type: 'yuanshao' },
-      { text: '趁机学习新技能，自我提升不能停', type: 'caocao' },
-      { text: '想出门又懒得动，在纠结中度过一天', type: 'diaochan' }
+      { text: '趁机学习新技能，自我提升不能停', type: 'guanyu' },
+      { text: '想出门又懒得动，在纠结中度过一天', type: 'lvbu' }
     ]
   },
   {
@@ -51,7 +51,7 @@ const questions = [
       { text: '复盘分析，下次一定做得更好', type: 'zhugeliang' },
       { text: '搞砸就搞砸呗，天又塌不下来', type: 'liushan' },
       { text: '愤怒地质问团队，为什么没做好', type: 'caocao' },
-      { text: '陷入自责，怀疑自己的能力', type: 'zhouyu' }
+      { text: '陷入自责，怀疑自己的能力', type: 'lvbu' }
     ]
   },
   {
@@ -83,11 +83,11 @@ const questions = [
     text: '你在团队中的角色通常是——',
     options: [
       { text: '拍板做决定的那个人', type: 'caocao' },
-      { text: '把大家团结在一起的粘合剂', type: 'liubei' },
+      { text: '把大家团结在一起的粘合剂', type: 'zhouyu' },
       { text: '默默干活但不太说话的那个人', type: 'guanyu' },
-      { text: '躺在工位上等下班的那个人', type: 'liushan' },
+      { text: '躺在工位上等下班的那个人', type: 'diaochan' },
       { text: '制定计划分配任务的那个人', type: 'zhugeliang' },
-      { text: '经常提出创新想法的那个人', type: 'lvbu' }
+      { text: '经常提出创新想法的那个人', type: 'yuanshao' }
     ]
   },
   {
@@ -99,7 +99,7 @@ const questions = [
       { text: '暗中记下这笔账，等时机到了再清算', type: 'simayi' },
       { text: '算了算了，世界本来就不公平', type: 'liushan' },
       { text: '收集证据，通过正规渠道投诉', type: 'caocao' },
-      { text: '气得睡不着，但又无能为力', type: 'zhouyu' }
+      { text: '气得睡不着，但又无能为力', type: 'diaochan' }
     ]
   },
   {
@@ -110,7 +110,7 @@ const questions = [
       { text: '三分天注定，七分靠打拼，剩下九十分靠关系', type: 'liubei' },
       { text: '努力不一定会成功，但不努力一定会很舒服', type: 'liushan' },
       { text: '努力是基本功，关键得等风来', type: 'simayi' },
-      { text: '成功需要努力，更需要正确的方向', type: 'caocao' },
+      { text: '成功需要努力，更需要正确的方向', type: 'guanyu' },
       { text: '为什么努力了还是不如别人，很焦虑', type: 'zhouyu' }
     ]
   },
@@ -134,7 +134,7 @@ const questions = [
       { text: '能力一般但天天加班表演努力的', type: 'liushan' },
       { text: '表面兄弟背后捅刀的', type: 'liubei' },
       { text: '说了半天也没说清楚到底要干嘛的', type: 'caocao' },
-      { text: '总是质疑你的方案，指手画脚的', type: 'zhugeliang' },
+      { text: '总是质疑你的方案，指手画脚的', type: 'yuanshao' },
       { text: '抢功劳第一名，甩锅也第一名的', type: 'lvbu' }
     ]
   },
@@ -147,7 +147,7 @@ const questions = [
       { text: '分析利弊，制定 plan A/B/C，准备万全再动手', type: 'zhugeliang' },
       { text: '风险太高，还是稳稳当当的好', type: 'liushan' },
       { text: '先观望一下，看看别人怎么做', type: 'simayi' },
-      { text: '很心动但不敢行动，怕失败', type: 'yuanshao' }
+      { text: '很心动但不敢行动，怕失败', type: 'zhouyu' }
     ]
   },
   {
@@ -158,7 +158,7 @@ const questions = [
       { text: '有选择地社交，只跟能聊到一起的人深交', type: 'guanyu' },
       { text: '能不社交就不社交，微信消息已读不回是常态', type: 'liushan' },
       { text: '不主动社交，但别人找我我也能应付', type: 'diaochan' },
-      { text: '带着目的社交，认识有用的人', type: 'caocao' },
+      { text: '带着目的社交，认识有用的人', type: 'lvbu' },
       { text: '在人群中感到不自在，但又怕被孤立', type: 'zhouyu' }
     ]
   },
@@ -195,7 +195,7 @@ const questions = [
       { text: '默默陪着，但心里想着自己的事情', type: 'liushan' },
       { text: '表面安慰，实际上在想怎么利用这个信息', type: 'simayi' },
       { text: '比朋友还激动，恨不得替他解决问题', type: 'guanyu' },
-      { text: '担心说错话让朋友更难过', type: 'diaochan' }
+      { text: '担心说错话让朋友更难过', type: 'zhouyu' }
     ]
   },
   {
@@ -207,7 +207,7 @@ const questions = [
       { text: '能不变就不变，稳定最重要', type: 'liushan' },
       { text: '反复分析利弊，制定详细计划后再行动', type: 'zhugeliang' },
       { text: '先试探性地尝试一下，看看效果', type: 'simayi' },
-      { text: '想改变又害怕改变，纠结很久', type: 'yuanshao' }
+      { text: '想改变又害怕改变，纠结很久', type: 'diaochan' }
     ]
   },
   {
@@ -231,7 +231,7 @@ const questions = [
       { text: '慌了，不知道该怎么办', type: 'liushan' },
       { text: '冷静分析，找出最优解决方案', type: 'zhugeliang' },
       { text: '先控制局面，再慢慢想办法', type: 'simayi' },
-      { text: '求助他人，希望有人能站出来', type: 'diaochan' }
+      { text: '求助他人，希望有人能站出来', type: 'lvbu' }
     ]
   },
   {
@@ -243,7 +243,7 @@ const questions = [
       { text: '一直保持轻松自在的生活状态', type: 'liushan' },
       { text: '通过智慧解决了很多难题', type: 'zhugeliang' },
       { text: '隐忍多年终于等到机会', type: 'simayi' },
-      { text: '敢于尝试很多新鲜事物', type: 'lvbu' }
+      { text: '敢于尝试很多新鲜事物', type: 'guanyu' }
     ]
   }
 ];
