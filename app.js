@@ -10,11 +10,11 @@ const questions = [
     id: 1,
     text: '老板在会上说"大家畅所欲言"，你会——',
     options: [
-      { text: '第一个发言，条理清晰，方案直接摆出来', type: 'caocao' },
-      { text: '先看看风向，等大部分人表态后再附和', type: 'liubei' },
-      { text: '低头假装记笔记，心里想的是晚饭吃什么', type: 'liushan' },
+      { text: '有想法但想准备得更完美再说，怕被别人比下去', type: 'zhouyu' },
+      { text: '先看看风向，等大部分人表态后再附和', type: 'liushan' },
+      { text: '快速记录要点，等别人说完再补充完善', type: 'zhugeliang' },
       { text: '心里有想法但不说，会后单独找领导聊', type: 'simayi' },
-      { text: '快速记录要点，等别人说完再补充', type: 'zhugeliang' },
+      { text: '有好几个想法但不知道该说哪个，纠结中', type: 'yuanshao' },
       { text: '担心说错话，全程保持沉默', type: 'diaochan' }
     ]
   },
@@ -24,10 +24,10 @@ const questions = [
     options: [
       { text: '当面撕破脸，证据甩桌上，谁也别想跑', type: 'guanyu' },
       { text: '算了，多一事不如少一事', type: 'liushan' },
-      { text: '表面不动声色，暗中收集证据，关键时刻一击致命', type: 'simayi' },
-      { text: '找其他同事吐槽，争取舆论支持后再行动', type: 'lvbu' },
-      { text: '直接找上级说明情况，要求公正处理', type: 'caocao' },
-      { text: '委屈但不敢说，只能自己消化情绪', type: 'zhouyu' }
+      { text: '气到内伤，但不想让别人看出来', type: 'zhouyu' },
+      { text: '直接找上级说明情况，要求公正处理', type: 'lvbu' },
+      { text: '暗中记下这笔账，等时机成熟再清算', type: 'simayi' },
+      { text: '委屈但不敢说，只能自己消化情绪', type: 'diaochan' }
     ]
   },
   {
@@ -37,21 +37,21 @@ const questions = [
       { text: '躺在床上刷手机到天黑，外卖都懒得点', type: 'liushan' },
       { text: '约朋友吃饭喝酒，社交就是充电', type: 'liubei' },
       { text: '虽然人在休息，但脑子里还在复盘工作', type: 'zhugeliang' },
-      { text: '制定了精确到小时的计划，但一条都没执行', type: 'yuanshao' },
       { text: '趁机学习新技能，自我提升不能停', type: 'guanyu' },
-      { text: '想出门又懒得动，在纠结中度过一天', type: 'lvbu' }
+      { text: '想出门又懒得动，在纠结中度过一天', type: 'lvbu' },
+      { text: '想约人又怕打扰别人，最后一个人待着', type: 'diaochan' }
     ]
   },
   {
     id: 4,
     text: '项目搞砸了，你的第一反应是——',
     options: [
-      { text: '先甩锅，保住自己再说', type: 'simayi' },
-      { text: '主动认错，但私下想办法补救', type: 'liubei' },
+      { text: '愤怒地质问团队，为什么没做好', type: 'yuanshao' },
       { text: '复盘分析，下次一定做得更好', type: 'zhugeliang' },
       { text: '搞砸就搞砸呗，天又塌不下来', type: 'liushan' },
-      { text: '愤怒地质问团队，为什么没做好', type: 'caocao' },
-      { text: '陷入自责，怀疑自己的能力', type: 'lvbu' }
+      { text: '立即想办法补救，先把损失降到最低', type: 'caocao' },
+      { text: '主动认错，私下想办法弥补', type: 'simayi' },
+      { text: '陷入深深的自责，怀疑自己的能力', type: 'lvbu' }
     ]
   },
   {
@@ -59,9 +59,9 @@ const questions = [
     text: '想涨薪了，你会——',
     options: [
       { text: '直接找老板谈，数据和成果摆上去', type: 'caocao' },
-      { text: '先请老板吃顿饭，铺垫铺垫再说', type: 'liubei' },
+      { text: '觉得自己的贡献有目共睹，不屑于主动开口提', type: 'guanyu' },
+      { text: '准备了详细的业绩对比，证明自己值得更多', type: 'zhouyu' },
       { text: '算了，大不了跳槽', type: 'lvbu' },
-      { text: '准备了三个月的 PPT，但到了门口又退缩了', type: 'yuanshao' },
       { text: '默默等待老板主动发现我的价值', type: 'zhugeliang' },
       { text: '想提又不敢提，怕被拒绝后尴尬', type: 'diaochan' }
     ]
@@ -73,9 +73,9 @@ const questions = [
       { text: '二话不说直接转，朋友比钱重要', type: 'liubei' },
       { text: '先评估对方还款能力，再决定借不借', type: 'caocao' },
       { text: '假装没看到消息，过两天说"最近也紧"', type: 'simayi' },
-      { text: '想借又怕不还，在"借"和"不借"之间内耗三天', type: 'diaochan' },
       { text: '借可以，但要写借条按规矩来', type: 'guanyu' },
-      { text: '自己都没多少钱，怎么借', type: 'liushan' }
+      { text: '自己都没多少钱，怎么借', type: 'liushan' },
+      { text: '想借又怕不还，在"借"和"不借"之间内耗三天', type: 'diaochan' }
     ]
   },
   {
@@ -83,11 +83,11 @@ const questions = [
     text: '你在团队中的角色通常是——',
     options: [
       { text: '拍板做决定的那个人', type: 'caocao' },
-      { text: '把大家团结在一起的粘合剂', type: 'zhouyu' },
+      { text: '制定计划、分配任务的那个人', type: 'zhugeliang' },
       { text: '默默干活但不太说话的那个人', type: 'guanyu' },
-      { text: '躺在工位上等下班的那个人', type: 'diaochan' },
-      { text: '制定计划分配任务的那个人', type: 'zhugeliang' },
-      { text: '经常提出创新想法的那个人', type: 'yuanshao' }
+      { text: '把大家团结在一起的粘合剂', type: 'liubei' },
+      { text: '经常提出创新想法的那个人', type: 'yuanshao' },
+      { text: '总想做到最好，不允许自己比别人差', type: 'zhouyu' }
     ]
   },
   {
@@ -97,9 +97,9 @@ const questions = [
       { text: '站出来正面硬刚，哪怕得罪人', type: 'guanyu' },
       { text: '拉拢一帮人一起抗争，人多力量大', type: 'liubei' },
       { text: '暗中记下这笔账，等时机到了再清算', type: 'simayi' },
-      { text: '算了算了，世界本来就不公平', type: 'liushan' },
       { text: '收集证据，通过正规渠道投诉', type: 'caocao' },
-      { text: '气得睡不着，但又无能为力', type: 'diaochan' }
+      { text: '气得睡不着，但又无能为力', type: 'zhouyu' },
+      { text: '算了算了，世界本来就不公平', type: 'liushan' }
     ]
   },
   {
@@ -107,11 +107,11 @@ const questions = [
     text: '你对"努力就会成功"这句话的态度是——',
     options: [
       { text: '深信不疑，我命由我不由天', type: 'zhugeliang' },
-      { text: '三分天注定，七分靠打拼，剩下九十分靠关系', type: 'liubei' },
       { text: '努力不一定会成功，但不努力一定会很舒服', type: 'liushan' },
-      { text: '努力是基本功，关键得等风来', type: 'simayi' },
-      { text: '成功需要努力，更需要正确的方向', type: 'guanyu' },
-      { text: '为什么努力了还是不如别人，很焦虑', type: 'zhouyu' }
+      { text: '三分天注定，七分靠打拼，剩下九十分靠关系', type: 'liubei' },
+      { text: '努力了但还是不如别人，很焦虑', type: 'simayi' },
+      { text: '成功需要努力，更需要正确的方向', type: 'lvbu' },
+      { text: '为什么努力了还是不如别人，好累', type: 'zhouyu' }
     ]
   },
   {
@@ -119,11 +119,11 @@ const questions = [
     text: '做决策时，你更倾向于——',
     options: [
       { text: '相信直觉，快速做出决定', type: 'caocao' },
-      { text: '听取多方意见，综合考虑', type: 'liubei' },
-      { text: '能拖就拖，不到最后不做决定', type: 'liushan' },
       { text: '收集所有信息，分析利弊再决定', type: 'zhugeliang' },
+      { text: '做了决定又反复修改，难以定夺', type: 'yuanshao' },
       { text: '参考过往经验，选择稳妥方案', type: 'simayi' },
-      { text: '做了决定又反复修改，难以定夺', type: 'yuanshao' }
+      { text: '能拖就拖，不到最后不做决定', type: 'liushan' },
+      { text: '听取多方意见，综合考虑后再决定', type: 'liubei' }
     ]
   },
   {
@@ -131,11 +131,11 @@ const questions = [
     text: '你最受不了的同事类型是——',
     options: [
       { text: '啥都不会但特别会拍马屁的', type: 'guanyu' },
-      { text: '能力一般但天天加班表演努力的', type: 'liushan' },
       { text: '表面兄弟背后捅刀的', type: 'liubei' },
+      { text: '抢功劳第一名，甩锅也第一名的', type: 'lvbu' },
+      { text: '总是质疑你的方案，指手画脚的', type: 'zhouyu' },
       { text: '说了半天也没说清楚到底要干嘛的', type: 'caocao' },
-      { text: '总是质疑你的方案，指手画脚的', type: 'yuanshao' },
-      { text: '抢功劳第一名，甩锅也第一名的', type: 'lvbu' }
+      { text: '有事就找你，没事就消失的', type: 'diaochan' }
     ]
   },
   {
@@ -143,82 +143,82 @@ const questions = [
     text: '面对一个高风险高回报的机会，你会——',
     options: [
       { text: '干了，富贵险中求', type: 'caocao' },
-      { text: '先找几个靠谱的人一起分担风险', type: 'liubei' },
-      { text: '分析利弊，制定 plan A/B/C，准备万全再动手', type: 'zhugeliang' },
-      { text: '风险太高，还是稳稳当当的好', type: 'liushan' },
       { text: '先观望一下，看看别人怎么做', type: 'simayi' },
-      { text: '很心动但不敢行动，怕失败', type: 'zhouyu' }
+      { text: '分析利弊，制定plan A/B/C，准备万全再动手', type: 'zhugeliang' },
+      { text: '很心动但不敢行动，怕失败', type: 'lvbu' },
+      { text: '先找几个靠谱的人一起分担风险', type: 'liubei' },
+      { text: '风险太高，还是稳稳当当的好', type: 'liushan' }
     ]
   },
   {
     id: 13,
     text: '你在社交中的状态更像——',
     options: [
-      { text: '社交达人，三句话就能跟人称兄道弟', type: 'liubei' },
+      { text: '有明确目标，只跟能帮到自己的人来往', type: 'caocao' },
       { text: '有选择地社交，只跟能聊到一起的人深交', type: 'guanyu' },
       { text: '能不社交就不社交，微信消息已读不回是常态', type: 'liushan' },
-      { text: '不主动社交，但别人找我我也能应付', type: 'diaochan' },
+      { text: '在人群中感到不自在，但又怕被孤立', type: 'diaochan' },
       { text: '带着目的社交，认识有用的人', type: 'lvbu' },
-      { text: '在人群中感到不自在，但又怕被孤立', type: 'zhouyu' }
+      { text: '表面融入，内心保持距离', type: 'yuanshao' }
     ]
   },
   {
     id: 14,
     text: '你觉得自己最大的问题是——',
     options: [
-      { text: '太冲动，经常事后后悔', type: 'lvbu' },
-      { text: '太在意别人的看法', type: 'diaochan' },
       { text: '想太多，做得太少', type: 'yuanshao' },
+      { text: '太容易相信别人，容易上当', type: 'liubei' },
+      { text: '太冲动，经常事后后悔', type: 'lvbu' },
       { text: '根本不想努力，但又焦虑不努力的后果', type: 'zhouyu' },
       { text: '太强势，容易给人压力', type: 'caocao' },
-      { text: '太容易相信别人，容易上当', type: 'liubei' }
+      { text: '什么苦都自己扛，从不求助', type: 'simayi' }
     ]
   },
   {
     id: 15,
     text: '面对压力，你的应对方式是——',
     options: [
-      { text: '迎难而上，把压力转化为动力', type: 'caocao' },
-      { text: '找朋友倾诉，寻求情感支持', type: 'liubei' },
+      { text: '虽然很焦虑，但告诉自己要撑住', type: 'yuanshao' },
+      { text: '默默承受，相信时间会解决一切', type: 'simayi' },
       { text: '逃避现实，先放松再说', type: 'liushan' },
       { text: '制定详细计划，一步步解决', type: 'zhugeliang' },
-      { text: '默默承受，相信时间会解决一切', type: 'simayi' },
-      { text: '压力大到失眠，但又无法解决', type: 'zhouyu' }
+      { text: '找朋友倾诉，寻求情感支持', type: 'liubei' },
+      { text: '压力大到失眠，但又无法解决', type: 'diaochan' }
     ]
   },
   {
     id: 16,
     text: '朋友心情不好找你倾诉，你会——',
     options: [
+      { text: '虽然想帮忙，但不知道说什么，只能干坐着', type: 'lvbu' },
       { text: '认真倾听，给出实际的建议和解决方案', type: 'zhugeliang' },
-      { text: '先安慰情绪，再慢慢引导对方看到积极面', type: 'liubei' },
       { text: '默默陪着，但心里想着自己的事情', type: 'liushan' },
-      { text: '表面安慰，实际上在想怎么利用这个信息', type: 'simayi' },
-      { text: '比朋友还激动，恨不得替他解决问题', type: 'guanyu' },
-      { text: '担心说错话让朋友更难过', type: 'zhouyu' }
+      { text: '比朋友还激动，恨不得替他出头', type: 'guanyu' },
+      { text: '听完直接指出问题根源，给出明确建议', type: 'caocao' },
+      { text: '感同身受，比对方还难过', type: 'yuanshao' }
     ]
   },
   {
     id: 17,
     text: '面对重大人生选择（比如换城市、换行业），你会——',
     options: [
+      { text: '征求家人朋友意见，综合考虑后再决定', type: 'yuanshao' },
+      { text: '仔细分析哪个选择能让自己发展得更好', type: 'zhouyu' },
       { text: '果断决定，相信自己的直觉和判断', type: 'caocao' },
-      { text: '征求家人朋友意见，综合考虑后再决定', type: 'liubei' },
-      { text: '能不变就不变，稳定最重要', type: 'liushan' },
-      { text: '反复分析利弊，制定详细计划后再行动', type: 'zhugeliang' },
-      { text: '先试探性地尝试一下，看看效果', type: 'simayi' },
-      { text: '想改变又害怕改变，纠结很久', type: 'diaochan' }
+      { text: '凭自己的能力，去哪都能立足，不怕变', type: 'guanyu' },
+      { text: '想改变又害怕改变，一直拖着不动', type: 'diaochan' },
+      { text: '听听大家的建议，选一个人最多的方案', type: 'liubei' }
     ]
   },
   {
     id: 18,
     text: '你如何看待"成功"？',
     options: [
+      { text: '成功就是出人头地，让所有人看到我的能力', type: 'yuanshao' },
+      { text: '成功就是成为最优秀的那个人，没有人能超过我', type: 'zhouyu' },
       { text: '成功就是掌握权力和资源，能够影响他人', type: 'caocao' },
       { text: '成功是拥有真诚的人际关系和内心的满足', type: 'liubei' },
-      { text: '成功就是过得舒服自在，不用为生活奔波', type: 'liushan' },
       { text: '成功需要长期积累，急不得也慢不得', type: 'simayi' },
-      { text: '成功就是实现自己的目标和价值', type: 'zhugeliang' },
       { text: '成功是成为某个领域的顶尖人才', type: 'lvbu' }
     ]
   },
@@ -226,27 +226,28 @@ const questions = [
     id: 19,
     text: '遇到紧急情况需要快速决策，你会——',
     options: [
-      { text: '立即行动，边做边调整', type: 'caocao' },
-      { text: '先稳定团队情绪，再分工合作解决问题', type: 'liubei' },
-      { text: '慌了，不知道该怎么办', type: 'liushan' },
+      { text: '六神无主，等着别人来拿主意', type: 'yuanshao' },
+      { text: '慌了但强迫自己冷静，硬撑着处理', type: 'zhouyu' },
       { text: '冷静分析，找出最优解决方案', type: 'zhugeliang' },
-      { text: '先控制局面，再慢慢想办法', type: 'simayi' },
-      { text: '求助他人，希望有人能站出来', type: 'lvbu' }
+      { text: '先控制住局面，再慢慢想办法', type: 'simayi' },
+      { text: '冲上去硬扛，先顶住再说', type: 'guanyu' },
+      { text: '紧张到说不出话，脑子一片空白', type: 'diaochan' }
     ]
   },
   {
     id: 20,
     text: '回顾过去，你最自豪的是——',
     options: [
-      { text: '取得了一些让人瞩目的成就', type: 'caocao' },
-      { text: '结交了一群真心相待的朋友', type: 'liubei' },
-      { text: '一直保持轻松自在的生活状态', type: 'liushan' },
-      { text: '通过智慧解决了很多难题', type: 'zhugeliang' },
-      { text: '隐忍多年终于等到机会', type: 'simayi' },
-      { text: '敢于尝试很多新鲜事物', type: 'guanyu' }
+      { text: '拥有了很多人脉和资源', type: 'yuanshao' },
+      { text: '在竞争中赢过很多次，证明了自己的实力', type: 'zhouyu' },
+      { text: '敢于尝试很多新鲜事物', type: 'guanyu' },
+      { text: '在某个领域做到了顶尖水平', type: 'lvbu' },
+      { text: '一直默默付出，帮助了很多人', type: 'diaochan' },
+      { text: '通过智慧解决了很多难题', type: 'zhugeliang' }
     ]
   }
 ];
+
 
 // ========================
 // 结果数据（10种人格 + 1隐藏）
